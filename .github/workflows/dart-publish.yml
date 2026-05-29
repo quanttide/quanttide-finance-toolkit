@@ -1,4 +1,4 @@
-name: dart-publish
+name: publish-dart
 on:
   release:
     types: [published]
@@ -6,20 +6,11 @@ jobs:
   publishing:
     if: startsWith(github.ref, 'refs/tags/dart/')
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/dart
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
-        with:
-          sdk: stable
-      - run: dart pub get
-      - run: dart analyze
-      - run: dart test
-      - name: Publish to pub.dev
-        uses: k-paxian/dart-package-publisher@master
+      - uses: k-paxian/dart-package-publisher@master
         with:
           credentialJson: \${{ secrets.PUBDEV_CREDENTIAL_JSON }}
           relativePath: packages/dart
           force: true
+          flutter: false
