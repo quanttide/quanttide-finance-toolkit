@@ -1,6 +1,4 @@
-# quanttide_finance
-
-量潮金融领域模型 — 核心实体（Journal、JournalEntry）。
+# 量潮财务管理Dart工具箱
 
 ## Models
 
@@ -27,4 +25,4 @@ final entry = JournalEntry(
 
 ## License
 
-MIT
+Apache 2.0
