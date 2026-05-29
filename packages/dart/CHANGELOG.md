@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.2] - 2026-05-29
+
+### Fixed
+
+- 配置 PUBDEV_CREDENTIAL_JSON 仓库 Secret
+
 ## [0.1.1] - 2026-05-29
 
 ### Fixed
