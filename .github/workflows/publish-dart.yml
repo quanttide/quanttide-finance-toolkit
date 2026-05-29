@@ -1,4 +1,4 @@
-name: publish
+name: publish-dart
 on:
   release:
     types: [published]
