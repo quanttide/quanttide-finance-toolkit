@@ -1,39 +1,30 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# quanttide_finance
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+量潮金融领域模型 — 核心实体（Journal、JournalEntry）。
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
+## Models
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- **Journal** — 日记账（id, name, createdAt）
+- **JournalEntry** — 凭证（id, journalId, createdAt, description, lines）
+- **JournalEntryLine** — 分录行（id, type, amount, description, createdAt）
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:quanttide_finance/quanttide_finance.dart';
+
+final journal = Journal(id: '1', name: '备用金', createdAt: DateTime.now());
+
+final entry = JournalEntry(
+  id: 'je1', journalId: journal.id, createdAt: DateTime.now(),
+  description: '购买办公用品',
+  lines: [
+    JournalEntryLine(id: 'l1', type: LineType.debit, amount: 1200),
+    JournalEntryLine(id: 'l2', type: LineType.credit, amount: 1200),
+  ],
+);
 ```
 
-## Additional information
+## License
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+MIT
