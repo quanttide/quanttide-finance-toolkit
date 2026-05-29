@@ -1,4 +1,4 @@
-name: check-dart
+name: dart-check
 on:
   push:
     paths: ['packages/dart/**']
